@@ -86,7 +86,7 @@ var PointText = TextItem.extend(/** @lends PointText# */{
             hasStroke = style.hasStroke(),
             leading = style.getLeading(),
             shadowColor = ctx.shadowColor;
-        ctx.font = style.getFontStyle();
+        ctx.font = style.getCombinedFont();
         ctx.textAlign = style.getJustification();
         for (var i = 0, l = lines.length; i < l; i++) {
             // See Path._draw() for explanation about ctx.shadowColor
@@ -108,7 +108,7 @@ var PointText = TextItem.extend(/** @lends PointText# */{
             numLines = lines.length,
             justification = style.getJustification(),
             leading = style.getLeading(),
-            width = this.getView().getTextWidth(style.getFontStyle(), lines),
+            width = this.getView().getTextWidth(style.getCombinedFont(), lines),
             x = 0;
         // Adjust for different justifications.
         if (justification !== 'left')

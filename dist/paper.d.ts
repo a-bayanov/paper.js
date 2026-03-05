@@ -6528,7 +6528,12 @@ declare namespace paper {
          */
         fontWeight: string | number
 
-        /** 
+        /**
+         * The font-style to be used in text content.
+         */
+        fontStyle: string | number
+
+        /**
          * The font size of text content, as a number in pixels, or as a string with
          * optional units `'px'`, `'pt'` and `'em'`.
          */
