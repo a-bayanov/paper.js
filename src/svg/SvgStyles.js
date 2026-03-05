@@ -35,6 +35,7 @@ var SvgStyles = Base.each({
     // Text
     fontFamily: ['font-family', 'string'],
     fontWeight: ['font-weight', 'string'],
+    fontStyle: ['font-style', 'string'],
     fontSize: ['font-size', 'number'],
     justification: ['text-anchor', 'lookup', {
         left: 'start',

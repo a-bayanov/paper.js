@@ -94,6 +94,7 @@ var Style = Base.extend(new function() {
         // Characters
         fontFamily: 'sans-serif',
         fontWeight: 'normal',
+        fontStyle: 'normal',
         fontSize: 12,
         leading: null,
         // Paragraphs
@@ -112,6 +113,7 @@ var Style = Base.extend(new function() {
         miterLimit: /*#=*/Change.STROKE,
         fontFamily: /*#=*/Change.GEOMETRY,
         fontWeight: /*#=*/Change.GEOMETRY,
+        fontStyle: /*#=*/Change.GEOMETRY,
         fontSize: /*#=*/Change.GEOMETRY,
         font: /*#=*/Change.GEOMETRY, // deprecated, links to fontFamily
         leading: /*#=*/Change.GEOMETRY,
@@ -364,7 +366,7 @@ var Style = Base.extend(new function() {
 
     // Overrides
 
-    getFontStyle: function() {
+    getCombinedFont: function() {
         var fontSize = this.getFontSize();
         // To prevent an obscure iOS 7 crash, we have to convert the size to a
         // string first before passing it to the regular expression.
@@ -373,6 +375,7 @@ var Style = Base.extend(new function() {
         // something deeper down in the optimizer:
         // `if (size === 0) size = 0;`
         return this.getFontWeight()
+                + ' ' + this.getFontStyle()
                 + ' ' + fontSize + (/[a-z]/i.test(fontSize + '') ? ' ' : 'px ')
                 + this.getFontFamily();
     },
