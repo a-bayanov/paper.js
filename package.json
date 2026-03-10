@@ -16,18 +16,6 @@
   "main": "dist/paper-full.js",
   "types": "dist/paper.d.ts",
   "scripts": {
-    "minify": "gulp minify",
-    "build": "gulp build",
-    "dist": "gulp dist",
-    "zip": "gulp zip",
-    "docs": "gulp docs",
-    "publish": "gulp publish",
-    "load": "gulp load",
-    "jshint": "gulp jshint",
-    "test": "gulp test",
-    "test:browser": "gulp test:browser",
-    "test:phantom": "gulp test:phantom",
-    "test:node": "gulp test:node"
   },
   "files": [
     "AUTHORS.md",
@@ -39,12 +27,6 @@
   ],
   "engines": {
     "node": ">=8.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn jshint --ensure-branch develop",
-      "pre-push": "yarn test --ensure-branch develop"
-    }
   },
   "browser": {
     "./dist/node/extend.js": false,
